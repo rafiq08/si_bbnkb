@@ -4,6 +4,9 @@ if (isset($_GET['kode'])) {
 	$sql_cek = "SELECT p.id_pelayanan, p.bidang_pelayanan, m.id_petugas_bbnkb, m.kode_petugas, m.nama_petugas, m.id_pelayanan, m.tahun_kerja, m.status_kerja from tb_petugas_bbnkb m inner join tb_pelayanan p on p.id_pelayanan=m.id_pelayanan WHERE id_petugas_bbnkb='" . $_GET['kode'] . "'";
 	$query_cek = mysqli_query($koneksi, $sql_cek);
 	$data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
+
+
+	$data = mysqli_fetch_array($query_cek);
 }
 function set_select($value, $old)
 {
@@ -71,7 +74,7 @@ function set_select($value, $old)
 				<div class="form-group row">
 					<label class="col-sm-3 col-form-label">Status Pekerjaan Petugas</label>
 					<div class="col-sm-6">
-						<select id="status_kerja" name="status_kerja" class="form-control" required>
+						<select id="status_kerja" name="status_kerja" class="form-control" value="<?php echo ($data['status_kerja']) ?>" required>
 							<?php
 							if ($data['status_kerja'] == "PNS") echo "<option value='PNS' selected>PNS</option>";
 							else echo "<option value='PNS'>PNS</option>";

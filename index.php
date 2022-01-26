@@ -144,7 +144,7 @@ include "inc/koneksi.php";
 									</li>
 									<li class="nav-item">
 										<a href="?page=data-petugas_bbnkb" class="nav-link">
-											<i class="nav-icon fas fa-car text-warning"></i>
+											<i class="nav-icon fas fa-users text-warning"></i>
 											<p>Petugas Pelayanan BBNKB</p>
 										</a>
 									</li>
@@ -189,7 +189,7 @@ include "inc/koneksi.php";
 										<a href="?page=data-user" class="nav-link">
 											<i class="nav-icon fas fa-user text-warning"></i>
 											<p>
-												Data User
+												User
 											</p>
 										</a>
 									</li>
