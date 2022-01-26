@@ -1,6 +1,7 @@
 <?php
 
 include "../../inc/koneksi.php";
+include "../../inc/functions.php";
 
 $start = '';
 $end = '';
@@ -53,13 +54,13 @@ $query_tampil = mysqli_query($koneksi, $query);
             <tr>
                 <th><img src="../gambar/logo.png" width="120" height="160"></th>
                 <th></th> <br>
-                <th>
-                    <p class="text-center">PEMERINTAH PROVINSI KALIMANTAN SELATAN</p>
-                    <p class="text-center">BADAN KEUANGAN DAERAH</p>
-                    <p class="text-center">UNIT PELAYANAN PENDAPATAN DAERAH</p>
-                    <p class="text-center">(UPPD) BANJARMASIN II</p>
-                    <h5>J1. Brig. Jend. H. Hasan Basri No. 07 Banjarmasin Kode Pos 70123Telepon : (0511) 6741100 </h5>
-                    <h5>Email: uppdbanjarmasindua@gmail.com</h5>
+                <th style="text-align:center">
+                    <div>PEMERINTAH PROVINSI KALIMANTAN SELATAN</div>
+                    <div>BADAN KEUANGAN DAERAH</div>
+                    <div>UNIT PELAYANAN PENDAPATAN DAERAH</div>
+                    <div>(UPPD) BANJARMASIN II</div>
+                    <div style="margin-top: 15px; font-weight: 300;">J1. Brig. Jend. H. Hasan Basri No. 07 Banjarmasin Kode Pos 70123Telepon : (0511) 6741100 </div>
+                    <div style="font-weight: 300;">Email: uppdbanjarmasindua@gmail.com</div>
                 </th>
             </tr>
         </table>
@@ -101,6 +102,27 @@ $query_tampil = mysqli_query($koneksi, $query);
         }
         ?>
     </table>
+
+    <div style="max-width: 1000px; margin:0 auto;">
+        <div style="display: flex; justify-content: end; margin-top: 3rem;">
+            <div style="width: 300px;">
+                <div style="text-align: center;">
+                    Banjarmasin , <?= tanggal_indo(date('D d F Y')) ?>
+                    <br>
+                    KASI PELAYANAN PKB & BBNKB
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <span><u>H.RUDY INDRAWAB BAKTIE, S.SOS, MM</u></span>
+                    <br>
+                    NIP. 19730808 200801 1 022
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         window.print();

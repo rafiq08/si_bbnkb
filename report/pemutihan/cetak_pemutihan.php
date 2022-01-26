@@ -1,19 +1,21 @@
 <?php
 
 include "../../inc/koneksi.php";
+include "../../inc/functions.php";
+
 $start = '';
 $end = '';
-if(isset($_GET['start'])) {
+if (isset($_GET['start'])) {
     $start = trim($_GET['start']);
 }
-if(isset($_GET['end'])) {
+if (isset($_GET['end'])) {
     $end = trim($_GET['end']);
 }
 
 $query = "SELECT p.id_petugas_bbnkb, p.kode_petugas, p.nama_petugas, p.id_pelayanan, p.tahun_kerja, p.status_kerja, m.id_pemutihan, m.id_petugas_bbnkb, m.nopol, m.nama_stnk, m.tanggal from 
 tb_pemutihan m inner join tb_petugas_bbnkb p on  p.id_petugas_bbnkb=m.id_petugas_bbnkb";
 
-if($start != '' | $end != '') {
+if ($start != '' | $end != '') {
     $query .= " WHERE tanggal between '$start' AND '$end'";
 }
 
@@ -53,13 +55,13 @@ $query_tampil = mysqli_query($koneksi, $query);
                 <th><img src="../gambar/logo.png" width="120" height="160"></th>
                 <th></th> <br>
                 <th style="text-align:center">
-                    <p>PEMERINTAH PROVINSI KALIMANTAN SELATAN</p>
-                    <p>BADAN KEUANGAN DAERAH</p>
-                    <p>UNIT PELAYANAN PENDAPATAN DAERAH</p>
-                    <p>(UPPD) BANJARMASIN II</p>
-                    <h5>J1. Brig. Jend. H. Hasan Basri No. 07 Banjarmasin Kode Pos 70123Telepon : (0511) 6741100 </h5>
-                        <h5>Email: uppdbanjarmasindua@gmail.com</h5>
-                </th>            
+                    <div>PEMERINTAH PROVINSI KALIMANTAN SELATAN</div>
+                    <div>BADAN KEUANGAN DAERAH</div>
+                    <div>UNIT PELAYANAN PENDAPATAN DAERAH</div>
+                    <div>(UPPD) BANJARMASIN II</div>
+                    <div style="margin-top: 15px; font-weight: 300;">J1. Brig. Jend. H. Hasan Basri No. 07 Banjarmasin Kode Pos 70123Telepon : (0511) 6741100 </div>
+                    <div style="font-weight: 300;">Email: uppdbanjarmasindua@gmail.com</div>
+                </th>
             </tr>
         </table>
     </div>
@@ -79,7 +81,7 @@ $query_tampil = mysqli_query($koneksi, $query);
         </tr>
 
         <?php
-        
+
         $no = 1;
         while ($data = mysqli_fetch_array($query_tampil, MYSQLI_BOTH)) {
         ?>
@@ -95,6 +97,27 @@ $query_tampil = mysqli_query($koneksi, $query);
         }
         ?>
     </table>
+
+    <div style="max-width: 1000px; margin:0 auto;">
+        <div style="display: flex; justify-content: end; margin-top: 3rem;">
+            <div style="width: 300px;">
+                <div style="text-align: center;">
+                    Banjarmasin , <?= tanggal_indo(date('D d F Y')) ?>
+                    <br>
+                    KASI PELAYANAN PKB & BBNKB
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <span><u>H.RUDY INDRAWAB BAKTIE, S.SOS, MM</u></span>
+                    <br>
+                    NIP. 19730808 200801 1 022
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // window.print();

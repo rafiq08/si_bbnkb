@@ -27,5 +27,5 @@ function tanggal_indo($tanggal)
     'November' => 'November',
     'December' => 'Desember'
   );
-  return $hariIndo[$hari] . ' ' . date('d ') . $bulanIndo[$bulan] . date(' Y');
+  return  date('d ') . $bulanIndo[$bulan] . date(' Y');
 }

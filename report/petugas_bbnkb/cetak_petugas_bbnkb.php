@@ -109,7 +109,7 @@ $query_tampil = mysqli_query($koneksi, $query);
                 <div style="text-align: center;">
                     Banjarmasin , <?= tanggal_indo(date('D d F Y')) ?>
                     <br>
-                    KASI PELAYANAN PKB & BBNKB,
+                    KASI PELAYANAN PKB & BBNKB
                     <br>
                     <br>
                     <br>

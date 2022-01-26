@@ -201,11 +201,25 @@ include "inc/koneksi.php";
 								<a href="#" class="nav-link">
 									<i class="nav-icon fas fa-print"></i>
 									<p>
-										Kelola Laporan
+										Laporan Data
 										<i class="fas fa-angle-left right"></i>
 									</p>
 								</a>
 								<ul class="nav nav-treeview">
+
+									<li class="nav-item">
+										<a href="report/jenis_pelayanan/cetak_jenis_pelayanan.php" class="nav-link">
+											<i class="nav-icon fas fa-print text-warning"></i>
+											<p>Data Jenis Pelayanan</p>
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a href="report/petugas_bbnkb/cetak_petugas_bbnkb.php" class="nav-link">
+											<i class="nav-icon fas fa-print text-warning"></i>
+											<p>Data Petugas Pelayanan BBNKB</p>
+										</a>
+									</li>
 
 									<li class="nav-item">
 										<a href="?page=laporan-pemutihan" class="nav-link">
@@ -213,37 +227,28 @@ include "inc/koneksi.php";
 											<p>Data Pemutihan Pajak</p>
 										</a>
 									</li>
+
 									<li class="nav-item">
 										<a href="?page=laporan-bbnkb" class="nav-link">
 											<i class="nav-icon fas fa-print text-warning"></i>
 											<p>Data Pelayanan BBNKB</p>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="report/petugas_bbnkb/cetak_petugas_bbnkb.php" class="nav-link">
-											<i class="nav-icon fas fa-print text-warning"></i>
-											<p>Data Petugas Pelayanan BBNKB</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="report/jenis_pelayanan/cetak_jenis_pelayanan.php" class="nav-link">
-											<i class="nav-icon fas fa-print text-warning"></i>
-											<p>Data Jenis Pelayanan</p>
-										</a>
-									</li>
+
 									<li class="nav-item">
 										<a href="?page=laporan-pindah_i" class="nav-link">
 											<i class="nav-icon fas fa-print text-warning"></i>
 											<p>Data Pindah BJM I Ke BJM II</p>
 										</a>
 									</li>
+
 									<li class="nav-item">
 										<a href="?page=laporan-pindah_ii" class="nav-link">
 											<i class="nav-icon fas fa-print text-warning"></i>
 											<p>Data Pindah BJM II Ke BJM I</p>
 										</a>
 									</li>
-									
+
 								</ul>
 							</li>
 
@@ -273,41 +278,47 @@ include "inc/koneksi.php";
 								<ul class="nav nav-treeview">
 
 									<li class="nav-item">
-										<a href="report/cetak_pemutihan.php" class="nav-link">
-											<i class="nav-icon fas fa-print text-warning"></i>
-											<p>Data Pemutihan Pajak</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="report/cetak_pelayanan_bbnkb.php" class="nav-link">
-											<i class="nav-icon fas fa-print text-warning"></i>
-											<p>Data Pelayanan BBNKB</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="report/cetak_petugas_bbnkb.php" class="nav-link">
-											<i class="nav-icon fas fa-print text-warning"></i>
-											<p>Data Petugas Pelayanan BBNKB</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="report/cetak_jenis_pelayanan.php" class="nav-link">
+										<a href="report/jenis_pelayanan/cetak_jenis_pelayanan.php" class="nav-link">
 											<i class="nav-icon fas fa-print text-warning"></i>
 											<p>Data Jenis Pelayanan</p>
 										</a>
 									</li>
+
 									<li class="nav-item">
-										<a href="report/cetak_pindah_i.php" class="nav-link">
+										<a href="report/petugas_bbnkb/cetak_petugas_bbnkb.php" class="nav-link">
+											<i class="nav-icon fas fa-print text-warning"></i>
+											<p>Data Petugas Pelayanan BBNKB</p>
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a href="?page=laporan-pemutihan" class="nav-link">
+											<i class="nav-icon fas fa-print text-warning"></i>
+											<p>Data Pemutihan Pajak</p>
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a href="?page=laporan-bbnkb" class="nav-link">
+											<i class="nav-icon fas fa-print text-warning"></i>
+											<p>Data Pelayanan BBNKB</p>
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a href="?page=laporan-pindah_i" class="nav-link">
 											<i class="nav-icon fas fa-print text-warning"></i>
 											<p>Data Pindah BJM I Ke BJM II</p>
 										</a>
 									</li>
+
 									<li class="nav-item">
-										<a href="report/cetak_pindah_ii.php" class="nav-link">
+										<a href="?page=laporan-pindah_ii" class="nav-link">
 											<i class="nav-icon fas fa-print text-warning"></i>
 											<p>Data Pindah BJM II Ke BJM I</p>
 										</a>
 									</li>
+
 								</ul>
 							</li>
 						<?php
