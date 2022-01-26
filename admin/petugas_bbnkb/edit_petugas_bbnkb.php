@@ -79,7 +79,7 @@ if (isset($_GET['kode'])) {
 </div>
 
 <?php else : ?>
-	<h3 class="text-center">Data Tidak Ditemukan</h3>
+	<h3 class="text-center">Maaf Data Tidak Ditemukan</h3>
 	<div class="text-center">
 		<a href="?page=data-pemutihan" class="btn btn-sm btn-primary">Kembali</a>
 	</div>
