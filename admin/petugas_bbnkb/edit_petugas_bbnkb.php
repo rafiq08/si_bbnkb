@@ -6,7 +6,7 @@ if (isset($_GET['kode'])) {
 	$data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 }
 ?>
-
+<?php if ($data_cek) : ?>
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
@@ -77,6 +77,13 @@ if (isset($_GET['kode'])) {
 		</div>
 	</form>
 </div>
+
+<?php else : ?>
+	<h3 class="text-center">Data Tidak Ditemukan</h3>
+	<div class="text-center">
+		<a href="?page=data-pemutihan" class="btn btn-sm btn-primary">Kembali</a>
+	</div>
+<?php endif ?>
 
 <?php
 
