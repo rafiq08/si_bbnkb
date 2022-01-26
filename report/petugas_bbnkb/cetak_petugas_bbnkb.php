@@ -106,17 +106,19 @@ $query_tampil = mysqli_query($koneksi, $query);
     <div style="max-width: 1000px; margin:0 auto;">
         <div style="display: flex; justify-content: end; margin-top: 3rem;">
             <div style="width: 300px;">
-                <div style="text-align: left;">
+                <div style="text-align: center;">
                     Banjarmasin , <?= tanggal_indo(date('D d F Y')) ?>
                     <br>
-                    Kepala Bagian,
+                    KASI PELAYANAN PKB & BBNKB,
                     <br>
                     <br>
                     <br>
                     <br>
-                    <span>RIZKY KURNIAWAN</span>
                     <br>
-                    NIP. 20000704 2022 01
+                    <br>
+                    <span><u>H.RUDY INDRAWAB BAKTIE, S.SOS, MM</u></span>
+                    <br>
+                    NIP. 19730808 200801 1 022
                 </div>
             </div>
         </div>
