@@ -22,7 +22,7 @@ function set_select($value, $old)
 	<form action="" method="post" enctype="multipart/form-data">
 		<div class="card-body">
 
-			<div class="form-group 
+			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">Nama Petugas</label>
 				<div class="col-sm-6">
 					<select name="id_petugas_bbnkb" id="id_petugas_bbnkb" class="form-control" data-error="wajib di isi" value="<?php echo $data_cek['nama_petugas']; ?>" required>
@@ -91,7 +91,7 @@ function set_select($value, $old)
 <?php else : ?>
 	<h3 class="text-center">Data Tidak Ditemukan</h3>
 	<div class="text-center">
-		<a href="?page=data-pemutihan" class="btn btn-sm btn-primary">Kembali</a>
+		<a href="?page=data-pindah_ii" class="btn btn-sm btn-primary">Kembali</a>
 	</div>
 <?php endif ?>
 

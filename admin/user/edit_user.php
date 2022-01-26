@@ -68,7 +68,7 @@
 <?php else : ?>
 	<h3 class="text-center">Data Tidak Ditemukan</h3>
 	<div class="text-center">
-		<a href="?page=data-pemutihan" class="btn btn-sm btn-primary">Kembali</a>
+		<a href="?page=data-user" class="btn btn-sm btn-primary">Kembali</a>
 	</div>
 <?php endif ?>
 

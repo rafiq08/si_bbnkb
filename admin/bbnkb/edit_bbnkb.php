@@ -5,13 +5,15 @@ if (isset($_GET['kode'])) {
 	$query_cek = mysqli_query($koneksi, $sql_cek);
 	$data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 
-	function set_select($value, $old) {
-		if($value == $old) return "selected";
+	function set_select($value, $old)
+	{
+		if ($value == $old) return "selected";
 		return "";
 	}
 }
 ?>
 
+<?php if ($data_cek) : ?>
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
@@ -42,8 +44,8 @@ if (isset($_GET['kode'])) {
 						?>
 					</select>
 				</div>
-			</div>			
-			
+			</div>
+
 			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">Nomor Polisi Terdahulu</label>
 				<div class="col-sm-6">
@@ -78,15 +80,20 @@ if (isset($_GET['kode'])) {
 					<input type="date" class="form-control" name="tgl_daftar" data-error="wajib di isi" value="<?php echo $data_cek['tgl_daftar']; ?>" required>
 					<div class="help-block with-errors"></div>
 				</div>
-			</div>		
+			</div>
+		</div>
+		<div class="card-footer">
+			<input type="submit" name="Ubah" value="Update" class="btn btn-success">
+			<a href="?page=data-bbnkb" title="Kembali" class="btn btn-secondary">Batal</a>
+		</div>
+	</form>
 </div>
-<div class="card-footer">
-	<input type="submit" name="Ubah" value="Update" class="btn btn-success">
-	<a href="?page=data-bbnkb" title="Kembali" class="btn btn-secondary">Batal</a>
-</div>
-</form>
-</div>
-
+<?php else : ?>
+	<h3 class="text-center">Data Tidak Ditemukan</h3>
+	<div class="text-center">
+		<a href="?page=data-bbnkb" class="btn btn-sm btn-primary">Kembali</a>
+	</div>
+<?php endif ?>
 <?php
 
 if (isset($_POST['Ubah'])) {

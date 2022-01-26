@@ -13,7 +13,7 @@ function set_select($value, $old)
 	return "";
 }
 ?>
-
+<?php if ($data_cek) : ?>
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
@@ -87,6 +87,13 @@ function set_select($value, $old)
 </div>
 </form>
 </div>
+
+<?php else : ?>
+	<h3 class="text-center">Data Tidak Ditemukan</h3>
+	<div class="text-center">
+		<a href="?page=data-pindah_i" class="btn btn-sm btn-primary">Kembali</a>
+	</div>
+<?php endif ?>
 
 <?php
 
