@@ -12,8 +12,7 @@ if (isset($_GET['end'])) {
     $end = trim($_GET['end']);
 }
 
-$query = "SELECT p.id_petugas_bbnkb, p.kode_petugas, p.nama_petugas, p.id_pelayanan, p.tahun_kerja, p.status_kerja, q.id_pelayanan, q.bidang_pelayanan, q.waktu_penyelesaian, q.jam_pelayanan, m.id_bbnkb, m.jenis_pelayanan, m.nopol_lama, m.nopol_baru, m.nama_lama, m.nama_baru, m.tgl_daftar from tb_bbnkb m inner join tb_petugas_bbnkb p on p.id_petugas_bbnkb=m.id_petugas_bbnkb
-inner join tb_pelayanan q on q.id_pelayanan = m.jenis_pelayanan";
+$query = "SELECT p.id_petugas_bbnkb, p.kode_petugas, p.nama_petugas, p.id_pelayanan, p.tahun_kerja, p.status_kerja,  m.id_bbnkb, m.id_petugas_bbnkb, m.nopol_lama, m.nopol_baru, m.nama_lama, m.nama_baru, m.tgl_daftar from tb_bbnkb m inner join tb_petugas_bbnkb p on p.id_petugas_bbnkb=m.id_petugas_bbnkb";
 
 if ($start != '' | $end != '') {
     $query .= " WHERE tgl_daftar between '$start' AND '$end'";
@@ -74,8 +73,7 @@ $query_tampil = mysqli_query($koneksi, $query);
     <table class="table-data" cellspacing="0" align="center">
         <tr style="text-align:center">
             <th>NO</th>
-            <th>KODE PETUGAS</th>
-            <th>JENIS PELAYANAN</th>
+            <th>KODE PETUGAS</th>            
             <th>NOPOL LAMA</th>
             <th>NOPOL BARU</th>
             <th>NAMA LAMA</th>
@@ -91,7 +89,6 @@ $query_tampil = mysqli_query($koneksi, $query);
             <tr style="text-align:center">
                 <td><?= $no++; ?></td>
                 <td><?= $data['nama_petugas'] ?></td>
-                <td><?= $data['bidang_pelayanan'] ?></td>
                 <td><?= $data['nopol_lama'] ?></td>
                 <td><?= $data['nopol_baru'] ?></td>
                 <td><?= $data['nama_lama'] ?></td>
@@ -103,7 +100,7 @@ $query_tampil = mysqli_query($koneksi, $query);
         ?>
     </table>
 
-    <div style="max-width: 1000px; margin:0 auto;">
+    <div style="max-width: 915px; margin:0 auto;">
         <div style="display: flex; justify-content: end; margin-top: 3rem;">
             <div style="width: 300px;">
                 <div style="text-align: center;">
@@ -125,7 +122,7 @@ $query_tampil = mysqli_query($koneksi, $query);
     </div>
 
     <script>
-        window.print();
+        // window.print();
     </script>
 
 </body>

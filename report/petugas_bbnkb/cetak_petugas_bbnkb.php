@@ -103,7 +103,7 @@ $query_tampil = mysqli_query($koneksi, $query);
         ?>
     </table>
 
-    <div style="max-width: 1000px; margin:0 auto;">
+    <div style="max-width: 900px; margin:0 auto;">
         <div style="display: flex; justify-content: end; margin-top: 3rem;">
             <div style="width: 300px;">
                 <div style="text-align: center;">

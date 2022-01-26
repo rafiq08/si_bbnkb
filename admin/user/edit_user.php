@@ -78,8 +78,7 @@
     if (isset ($_POST['Ubah'])){
     $sql_ubah = "UPDATE tb_user SET
         nama='".$_POST['nama']."',
-        username='".$_POST['username']."',
-        password='".$_POST['password']."',
+        username='".$_POST['username']."',        
         level='".$_POST['level']."'
         WHERE id_user='".$_POST['id_user']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);

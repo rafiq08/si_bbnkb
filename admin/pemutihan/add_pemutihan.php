@@ -47,7 +47,7 @@
 
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Tanggal Daftar</label>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<input type="date" class="form-control" placeholder="tanggal" name="tanggal" data-error="wajib di isi" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -71,11 +71,11 @@ if (isset($_POST['simpan'])) {
 	$nopol = $_POST['nopol'];
 	$nama_stnk = $_POST['nama_stnk'];
 	$tanggal = $_POST['tanggal'];
-	$no_antri = $_POST['no_antri'];
+
 
 	//mulai proses simpan data
 
-	$query = mysqli_query($link, "INSERT INTO tb_pemutihan(id_petugas_bbnkb, nopol, nama_stnk, tanggal, no_antri) VALUES('$id_petugas_bbnkb','$nopol','$nama_stnk','$tanggal','$no_antri')");
+	$query = mysqli_query($link, "INSERT INTO tb_pemutihan(id_petugas_bbnkb, nopol, nama_stnk, tanggal) VALUES('$id_petugas_bbnkb','$nopol','$nama_stnk','$tanggal')");
 
 
 	if ($query) {
