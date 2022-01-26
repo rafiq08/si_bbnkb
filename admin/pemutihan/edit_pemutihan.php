@@ -61,7 +61,7 @@ function set_select($value, $old)
 
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Tanggal Daftar</label>
-					<div class="col-sm-2">
+					<div class="col-sm-3">
 						<input type="date" class="form-control" name="tanggal" data-error="wajib di isi" value="<?php echo $data_cek['tanggal']; ?>" required>
 						<div class="help-block with-errors"></div>
 					</div>

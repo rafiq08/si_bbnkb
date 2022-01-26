@@ -30,7 +30,7 @@
 					<?php
 					$koneksi = new mysqli("localhost", "root", "", "db_bbnkb");
 					$no = 1;					
-					$sql = $koneksi->query("SELECT p.id_petugas_bbnkb, p.kode_petugas, p.nama_petugas, p.id_pelayanan, p.tahun_kerja, p.status_kerja,  m.id_bbnkb, m.nopol_lama, m.nopol_baru, m.nama_lama, m.nama_baru, m.tgl_daftar from tb_bbnkb m inner join tb_petugas_bbnkb p on p.id_petugas_bbnkb=m.id_petugas_bbnkb");
+					$sql = $koneksi->query("SELECT p.id_petugas_bbnkb, p.kode_petugas, p.nama_petugas, p.id_pelayanan, p.tahun_kerja, p.status_kerja,  m.id_bbnkb, m.id_petugas_bbnkb, m.nopol_lama, m.nopol_baru, m.nama_lama, m.nama_baru, m.tgl_daftar from tb_bbnkb m inner join tb_petugas_bbnkb p on p.id_petugas_bbnkb=m.id_petugas_bbnkb");
 					while ($data = $sql->fetch_assoc()) {
 					?>
 

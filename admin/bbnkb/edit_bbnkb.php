@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['kode'])) {
-	$sql_cek = "SELECT p.id_petugas_bbnkb, p.kode_petugas, p.nama_petugas, p.id_pelayanan, p.tahun_kerja, p.status_kerja,  m.id_bbnkb, m.nopol_lama, m.nopol_baru, m.nama_lama, m.nama_baru, m.tgl_daftar from tb_bbnkb m inner join tb_petugas_bbnkb p on p.id_petugas_bbnkb=m.id_petugas_bbnkb WHERE id_bbnkb='" . $_GET['kode'] . "'";
+	$sql_cek = "SELECT p.id_petugas_bbnkb, p.kode_petugas, p.nama_petugas, p.id_pelayanan, p.tahun_kerja, p.status_kerja, m.id_bbnkb, m.id_petugas_bbnkb, m.nopol_lama, m.nopol_baru, m.nama_lama, m.nama_baru, m.tgl_daftar from tb_bbnkb m inner join tb_petugas_bbnkb p on p.id_petugas_bbnkb=m.id_petugas_bbnkb WHERE id_bbnkb='" . $_GET['kode'] . "'";
 	$query_cek = mysqli_query($koneksi, $sql_cek);
 	$data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 
@@ -98,8 +98,7 @@ if (isset($_GET['kode'])) {
 
 if (isset($_POST['Ubah'])) {
 	$sql_ubah = "UPDATE tb_bbnkb SET 
-		id_petugas_bbnkb='" . $_POST['id_petugas_bbnkb'] . "',
-		jenis_pelayanan='" . $_POST['jenis_pelayanan'] . "',
+		id_petugas_bbnkb='" . $_POST['id_petugas_bbnkb'] . "',		
 		nopol_lama='" . $_POST['nopol_lama'] . "',
 		nopol_baru='" . $_POST['nopol_baru'] . "',
 		nama_lama='" . $_POST['nama_lama'] . "',

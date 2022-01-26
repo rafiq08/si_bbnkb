@@ -76,7 +76,7 @@ function set_select($value, $old)
 
 			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">Tanggal Pengurusan Pindah</label>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<input type="date" class="form-control" id="tgl" name="tgl" placeholder="Masukkan Nama Pemilik STNK" value="<?php echo $data_cek['tgl']; ?>" required>
 				</div>
 			</div>

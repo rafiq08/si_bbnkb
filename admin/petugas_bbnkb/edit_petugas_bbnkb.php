@@ -5,78 +5,93 @@ if (isset($_GET['kode'])) {
 	$query_cek = mysqli_query($koneksi, $sql_cek);
 	$data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 }
+function set_select($value, $old)
+{
+	if ($value == $old) return "selected";
+	return "";
+}
 ?>
+
 <?php if ($data_cek) : ?>
-<div class="card card-success">
-	<div class="card-header">
-		<h3 class="card-title">
-			<i class="fa fa-edit"></i> Ubah Data Petugas Pelayanan BBNKB
-		</h3>
+	<div class="card card-success">
+		<div class="card-header">
+			<h3 class="card-title">
+				<i class="fa fa-edit"></i> Ubah Data Petugas Pelayanan BBNKB
+			</h3>
+		</div>
+		<form action="" method="post" enctype="multipart/form-data">
+			<div class="card-body">
+
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Kode Petugas</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="id_petugas_bbnkb" name="id_petugas_bbnkb" value="<?php echo $data_cek['id_petugas_bbnkb']; ?>">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Nama Petugas</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="nama_petugas" name="nama_petugas" value="<?php echo $data_cek['nama_petugas']; ?>" required>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Bidang Pelayanan</label>
+					<div class="col-sm-6">
+						<select name="id_pelayanan" id="id_pelayanan" class="form-control" data-error="wajib di isi" required>
+							<option selected="selected">- Pilih Bidang Pelayanan-</option>
+							<?php
+							// ambil data dari database
+							$query = "select * from tb_pelayanan";
+							$hasil = mysqli_query($koneksi, $query);
+							while ($row = mysqli_fetch_array($hasil)) {
+							?>
+								<?php if ($row['id_pelayanan']) : ?>
+									<option <?= set_select($row['id_pelayanan'], $data_cek['id_pelayanan']) ?> value="<?php echo $row['id_pelayanan'] ?>">
+										<?php echo $row['bidang_pelayanan'] ?>
+									</option>
+								<?php endif ?>
+
+								</option>
+							<?php
+							}
+							?>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Tahun Awal Kerja</label>
+					<div class="col-sm-6">
+						<input type="int" maxlength="4" class="form-control" id="tahun_kerja" name="tahun_kerja" value="<?php echo $data_cek['tahun_kerja']; ?>" required>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Status Pekerjaan Petugas</label>
+					<div class="col-sm-6">
+						<select id="status_kerja" name="status_kerja" class="form-control" required>
+							<?php
+							if ($data['status_kerja'] == "PNS") echo "<option value='PNS' selected>PNS</option>";
+							else echo "<option value='PNS'>PNS</option>";
+
+							if ($data['status_kerja'] == "Kontrak") echo "<option value='Kontrak' selected>Kontrak</option>";
+							else echo "<option value='Kontrak'>Kontrak</option>";
+							if ($data['status_kerja'] == "Honorer") echo "<option value='Honorer' selected>Honorer</option>";
+							else echo "<option value='Honorer'>Honorer</option>";
+							?>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-footer">
+				<input type="submit" name="Ubah" value="Update" class="btn btn-success">
+				<a href="?page=data-petugas_bbnkb" title="Kembali" class="btn btn-secondary">Batal</a>
+			</div>
+		</form>
 	</div>
-	<form action="" method="post" enctype="multipart/form-data">
-		<div class="card-body">
-
-			<div class="form-group row">
-				<label class="col-sm-3 col-form-label">Kode Petugas</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="id_petugas_bbnkb" name="id_petugas_bbnkb" value="<?php echo $data_cek['id_petugas_bbnkb']; ?>">
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-3 col-form-label">Nama Petugas</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="nama_petugas" name="nama_petugas" value="<?php echo $data_cek['nama_petugas']; ?>" required>
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-3 col-form-label">Bidang Pelayanan</label>
-				<div class="col-sm-6">
-					<select name="id_pelayanan" id="id_pelayanan" class="form-control" data-error="wajib di isi" value="<?php echo $data_cek['bidang']; ?>" required>
-						<option selected="selected">- Pilih Bidang Pelayanan-</option>
-						<?php
-						// ambil data dari database
-						$query = "select * from tb_pelayanan";
-						$hasil = mysqli_query($koneksi, $query);
-						while ($row = mysqli_fetch_array($hasil)) {
-						?>
-							<option value="<?php echo $row['id_pelayanan'] ?>">
-								<?php echo $row['bidang_pelayanan'] ?>
-							</option>
-						<?php
-						}
-						?>
-					</select>
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-3 col-form-label">Tahun Awal Kerja</label>
-				<div class="col-sm-6">
-					<input type="int" maxlength="4" class="form-control" id="tahun_kerja" name="tahun_kerja" value="<?php echo $data_cek['tahun_kerja']; ?>" required>
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-3 col-form-label">Status Pekerjaan Petugas</label>
-				<div class="col-sm-6">
-					<select id="status_kerja" name="status_kerja" class="form-control" value="<?php echo $data_cek['status_kerja']; ?>" required>
-						<option>-Pilih Status-</option>
-						<option value="PNS">PNS</option>
-						<option value="Kontrak">Kontrak</option>
-						<option value="Honorer">Honorer</option>
-					</select>
-				</div>
-			</div>
-		</div>
-
-		<div class="card-footer">
-			<input type="submit" name="Ubah" value="Update" class="btn btn-success">
-			<a href="?page=data-petugas_bbnkb" title="Kembali" class="btn btn-secondary">Batal</a>
-		</div>
-	</form>
-</div>
 
 <?php else : ?>
 	<h3 class="text-center">Maaf Data Tidak Ditemukan</h3>

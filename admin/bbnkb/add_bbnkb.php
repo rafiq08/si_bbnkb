@@ -60,7 +60,7 @@
 
 			<div class="form-group row">
 				<label class="col-sm-3 col-form-label">Tanggal Pengurusan</label>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 					<input type="date" class="form-control" placeholder="tgl_daftar" name="tgl_daftar" data-error="wajib di isi" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -81,8 +81,7 @@
 include "inc/koneksi.php";
 
 if (isset($_POST['simpan'])) {
-	$id_petugas_bbnkb = $_POST['id_petugas_bbnkb'];
-	$pelayanan = $_POST['jenis_pelayanan'];
+	$id_petugas_bbnkb = $_POST['id_petugas_bbnkb'];	
 	$nopol_lama = $_POST['nopol_lama'];
 	$nopol_baru = $_POST['nopol_baru'];
 	$nama_lama = $_POST['nama_lama'];
@@ -91,7 +90,7 @@ if (isset($_POST['simpan'])) {
 
 	//mulai proses simpan data
 
-	$query = mysqli_query($link, "INSERT INTO tb_bbnkb(id_petugas_bbnkb, jenis_pelayanan, nopol_lama, nopol_baru, nama_lama, nama_baru, tgl_daftar) VALUES('$id_petugas_bbnkb','$pelayanan','$nopol_lama','$nopol_baru','$nama_lama','$nama_baru','$tgl_daftar')");
+	$query = mysqli_query($link, "INSERT INTO tb_bbnkb(id_petugas_bbnkb, nopol_lama, nopol_baru, nama_lama, nama_baru, tgl_daftar) VALUES('$id_petugas_bbnkb','$nopol_lama','$nopol_baru','$nama_lama','$nama_baru','$tgl_daftar')");
 
 
 	if ($query) {
