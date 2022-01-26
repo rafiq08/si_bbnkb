@@ -5,8 +5,6 @@ if (isset($_GET['kode'])) {
 	$query_cek = mysqli_query($koneksi, $sql_cek);
 	$data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 
-
-	$data = mysqli_fetch_array($query_cek);
 }
 function set_select($value, $old)
 {
@@ -74,16 +72,10 @@ function set_select($value, $old)
 				<div class="form-group row">
 					<label class="col-sm-3 col-form-label">Status Pekerjaan Petugas</label>
 					<div class="col-sm-6">
-						<select id="status_kerja" name="status_kerja" class="form-control" value="<?php echo ($data['status_kerja']) ?>" required>
-							<?php
-							if ($data['status_kerja'] == "PNS") echo "<option value='PNS' selected>PNS</option>";
-							else echo "<option value='PNS'>PNS</option>";
-
-							if ($data['status_kerja'] == "Kontrak") echo "<option value='Kontrak' selected>Kontrak</option>";
-							else echo "<option value='Kontrak'>Kontrak</option>";
-							if ($data['status_kerja'] == "Honorer") echo "<option value='Honorer' selected>Honorer</option>";
-							else echo "<option value='Honorer'>Honorer</option>";
-							?>
+						<select id="status_kerja" name="status_kerja" class="form-control" required>
+							<option <?= set_select('PNS', $data_cek['status_kerja']) ?> value="PNS">PNS</option>
+							<option <?= set_select('Kontrak', $data_cek['status_kerja']) ?> value="Kontrak">Kontrak</option>
+							<option <?= set_select('Honorer', $data_cek['status_kerja']) ?> value="Honorer">Honorer</option>
 						</select>
 					</div>
 				</div>
