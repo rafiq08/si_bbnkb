@@ -1,0 +1,19 @@
+<script>
+    function icon(){
+        var i_header = document.getElementById('i_header');
+        i_header.innerHTML = "&#xf003;";
+
+        setTimeout(function(){
+            i_header.innerHTML = "&#xf2b7";
+        }, 1000);
+        setTimeout(function(){
+            i_header.innerHTML = "&#xf0e0";
+        }, 2000);
+        setTimeout(function(){
+            i_header.innerHTML = "&#xf003;";
+        }, 3000);
+    }
+
+    icon();
+    setInterval(icon, 3000);
+</script>
