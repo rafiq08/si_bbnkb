@@ -16,7 +16,7 @@ function set_select($value, $old)
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-edit"></i> Ubah Data Pindah BJM II Ke BJM I
+			<i class="fa fa-edit"></i> Ubah Data Pindah Banjarmasin II Ke Banjarmasin I
 		</h3>
 	</div>
 	<form action="" method="post" enctype="multipart/form-data">

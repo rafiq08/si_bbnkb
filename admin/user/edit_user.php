@@ -19,7 +19,7 @@
 			 readonly/>
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Nama User</label>
+				<label class="col-sm-2 col-form-label">Nama Lengkap</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="nama" name="nama" value="<?php echo $data_cek['nama']; ?>" required>
 				</div>
@@ -32,14 +32,14 @@
 				</div>
 			</div>
 
-			<!-- <div class="form-group row">
+			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Password</label>
 				<div class="col-sm-6">
 					<input type="password" class="form-control" id="pass" name="password" 
                     value="<?php echo $data_cek['password']; ?>" required>
 					<input id="mybutton" onclick="change()" type="checkbox" class="form-checkbox"> Lihat Password
 				</div>
-			</div> -->
+			</div>
 
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Level</label>
@@ -78,7 +78,8 @@
     if (isset ($_POST['Ubah'])){
     $sql_ubah = "UPDATE tb_user SET
         nama='".$_POST['nama']."',
-        username='".$_POST['username']."',        
+        username='".$_POST['username']."',
+        password='".md5($_POST['password'])."',
         level='".$_POST['level']."'
         WHERE id_user='".$_POST['id_user']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);

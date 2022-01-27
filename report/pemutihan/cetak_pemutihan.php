@@ -74,7 +74,7 @@ $query_tampil = mysqli_query($koneksi, $query);
     <table class="table-data" cellspacing="0" align="center">
         <tr style="text-align:center">
             <th>NO</th>
-            <th>KODE PETUGAS</th>
+            <th>NAMA PETUGAS</th>
             <th>NOMOR POLISI</th>
             <th>NAMA PEMILIK STNK</th>
             <th>TANGGAL DAFTAR ADMINISTRASI PAJAK</th>
@@ -86,12 +86,12 @@ $query_tampil = mysqli_query($koneksi, $query);
         while ($data = mysqli_fetch_array($query_tampil, MYSQLI_BOTH)) {
         ?>
 
-            <tr style="text-align:center">
-                <td><?= $no++; ?></td>
-                <td><?= $data['nama_petugas'] ?></td>
-                <td><?= $data['nopol'] ?></td>
+            <tr >
+                <td style="text-align:center"><?= $no++; ?></td>
+                <td style="text-align:center"><?= $data['nama_petugas'] ?></td>
+                <td style="text-align:center"><?= $data['nopol'] ?></td>
                 <td><?= $data['nama_stnk'] ?></td>
-                <td><?= $data['tanggal'] ?></td>
+                <td style="text-align:center"><?= $data['tanggal'] ?></td>
             </tr>
         <?php
         }

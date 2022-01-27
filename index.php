@@ -137,6 +137,14 @@ include "inc/koneksi.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
+										<a href="?page=data-user" class="nav-link">
+											<i class="nav-icon fas fa-user text-warning"></i>
+											<p>
+												User
+											</p>
+										</a>
+									</li>
+									<li class="nav-item">
 										<a href="?page=data-jenis_pelayanan" class="nav-link">
 											<i class="nav-icon fas fa-book text-warning"></i>
 											<p>Jenis Pelayanan</p>
@@ -185,14 +193,7 @@ include "inc/koneksi.php";
 											</li>
 										</ul>
 									</li>
-									<li class="nav-item">
-										<a href="?page=data-user" class="nav-link">
-											<i class="nav-icon fas fa-user text-warning"></i>
-											<p>
-												User
-											</p>
-										</a>
-									</li>
+
 								</ul>
 							</li>
 

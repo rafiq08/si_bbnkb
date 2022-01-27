@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Estimasi Waktu Penyelesaian</label>
+				<label class="col-sm-2 col-form-label">Estimasi Waktu Pengerjaan</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="waktu_penyelesaian" name="waktu_penyelesaian" placeholder="Masukkan Estimasi Waktu Penyelesaian" required>
 				</div>

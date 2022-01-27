@@ -94,7 +94,7 @@ $query_tampil = mysqli_query($koneksi, $query);
                 <td style="text-align:center"><?= $no++; ?></td>
                 <td style="text-align:center"><?= $data['kode_petugas'] ?></td>
                 <td style="text-align:center"><?= $data['nama_petugas'] ?></td>
-                <td style="text-align:center"><?= $data['bidang_pelayanan'] ?></td>
+                <td style=""><?= $data['bidang_pelayanan'] ?></td>
                 <td style="text-align:center"><?= $data['tahun_kerja'] ?></td>
                 <td style="text-align:center"><?= $data['status_kerja'] ?></td>
             </tr>

@@ -54,7 +54,7 @@ include "inc/koneksi.php";
 if (isset($_POST['Simpan'])) {
 
 	$nama = $_POST['nama'];
-	$username = $_POST['username'];	
+	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$md5 = md5($password);
 	$level = $_POST['level'];

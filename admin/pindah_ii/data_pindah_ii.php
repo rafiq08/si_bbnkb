@@ -1,7 +1,7 @@
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-car"></i> Data Pindah BJM II Ke BJM I
+			<i class="fa fa-car"></i> Data Pindah Banjarmasin II Ke Banjarmasin I
 		</h3>
 	</div>
 	<!-- /.card-header -->
@@ -39,7 +39,7 @@
 						<td class="text-center">
 								<?php echo $no++; ?>
 							</td>
-							<td class="text-center">
+							<td >
 								<?php echo $data['nama_petugas']; ?>
 							</td>
 							<td class="text-center">

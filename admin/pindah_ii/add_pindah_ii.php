@@ -1,7 +1,7 @@
 <div class="card card-primary">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-edit"></i> Tambah Data Pindah BJM II Ke BJM I
+			<i class="fa fa-edit"></i> Tambah Data Pindah Banjarmasin II Ke Banjarmasin I
 		</h3>
 	</div>
 	<form action="" method="POST" enctype="multipart/form-data">

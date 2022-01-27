@@ -86,14 +86,14 @@ $query_tampil = mysqli_query($koneksi, $query);
         while ($data = mysqli_fetch_array($query_tampil, MYSQLI_BOTH)) {
         ?>
 
-            <tr style="text-align:center">
-                <td><?= $no++; ?></td>
-                <td><?= $data['nama_petugas'] ?></td>
-                <td><?= $data['nopol_lama'] ?></td>
-                <td><?= $data['nopol_baru'] ?></td>
+            <tr >
+                <td style="text-align:center"><?= $no++; ?></td>
+                <td style="text-align:center"><?= $data['nama_petugas'] ?></td>
+                <td style="text-align:center"><?= $data['nopol_lama'] ?></td>
+                <td style="text-align:center"><?= $data['nopol_baru'] ?></td>
                 <td><?= $data['nama_lama'] ?></td>
                 <td><?= $data['nama_baru'] ?></td>
-                <td><?= $data['tgl_daftar'] ?></td>
+                <td style="text-align:center"><?= $data['tgl_daftar'] ?></td>
             </tr>
         <?php
         }

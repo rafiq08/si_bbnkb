@@ -43,7 +43,7 @@ $query_tampil = mysqli_query($koneksi, $query);
 <html>
 
 <head>
-    <title>Laporan Data Pindah BJM II Ke BJM I</title>
+    <title>Laporan Data Pindah Banjarmasin II Ke Banjarmasin I</title>
     <link rel="icon" href="../gambar/logo.png">
 </head>
 
@@ -68,13 +68,13 @@ $query_tampil = mysqli_query($koneksi, $query);
 
     <hr size="1" style="border-color: black;">
 
-    <h3 style="text-align:center">LAPORAN DATA PINDAH BJM II KE BJM I</h3>
+    <h3 style="text-align:center">LAPORAN DATA PINDAH BANJARMASIN II KE BANJARMASIN I</h3>
 
     <!-- <table class="table" border="1" style="width: 600px"> -->
     <table class="table-data" cellspacing="0" align="center">
         <tr style="text-align:center">
             <th>NO</th>
-            <th>KODE PETUGAS</th>
+            <th>NAMA PETUGAS</th>
             <th>NOMOR POLISI</th>
             <th>NAMA PEMILIK STNK</th>
             <th>ALAMAT LAMA</th>
@@ -88,14 +88,14 @@ $query_tampil = mysqli_query($koneksi, $query);
         while ($data = mysqli_fetch_array($query_tampil, MYSQLI_BOTH)) {
         ?>
 
-            <tr style="text-align:center">
-                <td><?= $no++; ?></td>
-                <td><?= $data['kode_petugas'] ?></td>
-                <td><?= $data['nopol'] ?></td>
+            <tr >
+                <td style="text-align:center"><?= $no++; ?></td>
+                <td style="text-align:center"><?= $data['nama_petugas'] ?></td>
+                <td style="text-align:center"><?= $data['nopol'] ?></td>
                 <td><?= $data['nama_stnk'] ?></td>
                 <td><?= $data['alamat_baru'] ?></td>
                 <td><?= $data['alamat_baru'] ?></td>
-                <td><?= $data['tgl'] ?></td>
+                <td style="text-align:center"><?= $data['tgl'] ?></td>
             </tr>
         <?php
         }
