@@ -1,6 +1,6 @@
 <div class="card card-success">
   <div class="card-header">
-    <h3 class="text-center">Aplikasi Pendataan Administrasi Balik Nama Pajak Kendaraan Bermotor</h3>
+    <h3 class="text-center">Aplikasi Pendataan Administrasi Pajak Balik Nama Kendaraan Bermotor</h3>
     <h5 class="text-center">UPPD BANJARMASIN II</h5>
   </div>
   <style>

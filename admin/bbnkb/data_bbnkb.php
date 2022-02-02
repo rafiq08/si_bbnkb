@@ -1,7 +1,7 @@
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-edit"></i> Data Administrasi Pajak Pada Pelayanan BBNKB
+			<i class="fa fa-edit"></i> Data Administrasi Pada Pelayanan BBNKB
 		</h3>
 	</div>
 	<!-- /.card-header -->

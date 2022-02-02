@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2022 at 05:11 PM
+-- Generation Time: Jan 27, 2022 at 06:44 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -160,7 +160,7 @@ CREATE TABLE `tb_pindah_bjm_ii` (
   `id_pindah` int(11) NOT NULL,
   `id_petugas_bbnkb` int(11) NOT NULL,
   `nopol` varchar(15) CHARACTER SET latin1 NOT NULL,
-  `nama_stnk` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `nama_stnk` varchar(50) CHARACTER SET latin1 NOT NULL,
   `alamat_lama` varchar(100) CHARACTER SET latin1 NOT NULL,
   `alamat_baru` varchar(100) CHARACTER SET latin1 NOT NULL,
   `tgl` date NOT NULL
@@ -258,43 +258,43 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_bbnkb`
 --
 ALTER TABLE `tb_bbnkb`
-  MODIFY `id_bbnkb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_bbnkb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tb_pelayanan`
 --
 ALTER TABLE `tb_pelayanan`
-  MODIFY `id_pelayanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pelayanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_pemutihan`
 --
 ALTER TABLE `tb_pemutihan`
-  MODIFY `id_pemutihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pemutihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tb_petugas_bbnkb`
 --
 ALTER TABLE `tb_petugas_bbnkb`
-  MODIFY `id_petugas_bbnkb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_petugas_bbnkb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_pindah_bjm_i`
 --
 ALTER TABLE `tb_pindah_bjm_i`
-  MODIFY `id_pindah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_pindah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tb_pindah_bjm_ii`
 --
 ALTER TABLE `tb_pindah_bjm_ii`
-  MODIFY `id_pindah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pindah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables

@@ -1,7 +1,7 @@
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-user"></i> Data Petugas Pelayanan BBN-KB
+			<i class="fa fa-user"></i> Data Petugas Pelayanan BBNKB
 		</h3>
 	</div>
 	<!-- /.card-header -->
@@ -53,7 +53,7 @@
 								<?php echo $data['status_kerja']; ?>
 							</td>
 
-							<td>								
+							<td>
 								<a href="?page=edit-petugas_bbnkb&kode=<?php echo $data['id_petugas_bbnkb']; ?>" title="Ubah" class="btn btn-success btn-sm">
 									<i class="fa fa-edit"></i>
 								</a>

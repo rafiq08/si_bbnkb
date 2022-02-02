@@ -17,7 +17,7 @@ if (isset($_GET['kode'])) {
 <div class="card card-success">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-edit"></i> Ubah Data Administrasi Pajak BBNKB
+			<i class="fa fa-edit"></i> Ubah Data Administrasi Pelayanan BBNKB
 		</h3>
 	</div>
 	<form action="" method="post" enctype="multipart/form-data">

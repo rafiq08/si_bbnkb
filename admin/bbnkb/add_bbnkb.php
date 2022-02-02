@@ -1,7 +1,7 @@
 <div class="card card-primary">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-edit"></i> Tambah Data Administrasi Pajak BBNKB
+			<i class="fa fa-edit"></i> Tambah Data Administrasi Pelayanan BBNKB
 		</h3>
 	</div>
 	<form action="" method="POST" enctype="multipart/form-data">

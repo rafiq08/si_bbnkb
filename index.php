@@ -76,7 +76,7 @@ include "inc/koneksi.php";
 				<li class="nav-item d-none d-sm-inline-block">
 					<a href="index.php" class="nav-link">
 						<font color="white">
-							<b>APLIKASI PENDATAAN ADMINISTRASI PAJAK BBNKB</b>
+							<b>APLIKASI PENDATAAN ADMINISTRASI PELAYANAN BBNKB</b>
 						</font>
 					</a>
 				</li>
