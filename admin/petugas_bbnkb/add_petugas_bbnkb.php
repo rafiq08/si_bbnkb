@@ -82,26 +82,35 @@ if (isset($_POST['simpan'])) {
 
 	//mulai proses simpan data
 
-	$query = mysqli_query($link, "INSERT INTO tb_petugas_bbnkb(kode_petugas, nama_petugas, id_pelayanan, tahun_kerja, status_kerja) VALUES('$kode_petugas','$nama_petugas','$id_pelayanan','$tahun_kerja','$status_kerja')");
+	$sql_check_data = mysqli_query($koneksi, "SELECT * FROM tb_petugas_bbnkb WHERE kode_petugas='$kode_petugas'") or die(mysqli_error($koneksi));
 
-
-	if ($query) {
+	if (mysqli_num_rows($sql_check_data) > 0) {
 		echo "<script>
-	Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
-	}).then((result) => {if (result.value){
-		window.location = 'index.php?page=data-petugas_bbnkb';
-		}
-	})</script>";
+		Swal.fire({title: 'Data Ini Sudah Ada',text: '',icon: 'error',confirmButtonText: 'OK'
+		}).then((result) => {if (result.value){
+			window.location = 'index.php?page=data-petugas_bbnkb';
+			}
+		})</script>";
 	} else {
-		//Pengecekan eror sql
-		// $isi = "Gagal Menambahkan Data dengan kesalahan =  ".mysqli_errno($link). " - ".mysqli_error($link);
-		// echo $isi;
-		echo "<script>
-	Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
-	}).then((result) => {if (result.value){
-		window.location = 'index.php?page=add-petugas_bbnkb';
+		$query = mysqli_query($link, "INSERT INTO tb_petugas_bbnkb(kode_petugas, nama_petugas, id_pelayanan, tahun_kerja, status_kerja) VALUES('$kode_petugas','$nama_petugas','$id_pelayanan','$tahun_kerja','$status_kerja')");
+		if ($query) {
+			echo "<script>
+			Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
+			}).then((result) => {if (result.value){
+				window.location = 'index.php?page=data-petugas_bbnkb';
+				}
+			})</script>";
+		} else {
+			//Pengecekan eror sql
+			// $isi = "Gagal Menambahkan Data dengan kesalahan =  ".mysqli_errno($link). " - ".mysqli_error($link);
+			// echo $isi;
+			echo "<script>
+			Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
+			}).then((result) => {if (result.value){
+				window.location = 'index.php?page=add-petugas_bbnkb';
+				}
+			})</script>";
 		}
-	})</script>";
 	}
 }
      //selesai proses simpan data

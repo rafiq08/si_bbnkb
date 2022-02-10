@@ -74,24 +74,32 @@ if (isset($_POST['simpan'])) {
 
 
 	//mulai proses simpan data
+	$sql_check_data = mysqli_query($koneksi, "SELECT * FROM tb_pemutihan WHERE nopol='$nopol'") or die(mysqli_error($koneksi));
 
-	$query = mysqli_query($link, "INSERT INTO tb_pemutihan(id_petugas_bbnkb, nopol, nama_stnk, tanggal) VALUES('$id_petugas_bbnkb','$nopol','$nama_stnk','$tanggal')");
-
-
-	if ($query) {
+	if (mysqli_num_rows($sql_check_data) > 0) {
 		echo "<script>
-	Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
-	}).then((result) => {if (result.value){
-		window.location = 'index.php?page=data-pemutihan';
-		}
-	})</script>";
+		Swal.fire({title: 'Data Ini Sudah Ada',text: '',icon: 'error',confirmButtonText: 'OK'
+		}).then((result) => {if (result.value){
+			window.location = 'index.php?page=data-pemutihan';
+			}
+		})</script>";
 	} else {
-		echo "<script>
-	Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
-	}).then((result) => {if (result.value){
-		window.location = 'index.php?page=add-pemutihan';
+		$query = mysqli_query($link, "INSERT INTO tb_pemutihan(id_petugas_bbnkb, nopol, nama_stnk, tanggal) VALUES('$id_petugas_bbnkb','$nopol','$nama_stnk','$tanggal')");
+		if ($query) {
+			echo "<script>
+			Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
+			}).then((result) => {if (result.value){
+				window.location = 'index.php?page=data-pemutihan';
+				}
+			})</script>";
+		} else {
+			echo "<script>
+			Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
+			}).then((result) => {if (result.value){
+				window.location = 'index.php?page=add-pemutihan';
+				}
+			})</script>";
 		}
-	})</script>";
 	}
 }
      //selesai proses simpan data

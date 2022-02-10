@@ -26,7 +26,7 @@
 				<div class="col-sm-6">
 					<input type="text" class="form-control" id="jam_pelayanan" name="jam_pelayanan" placeholder="Masukkan Jam Pelayanan" required>
 				</div>
-			</div>			
+			</div>
 
 		</div>
 		<div class="card-footer">
@@ -43,28 +43,35 @@ include "inc/koneksi.php";
 if (isset($_POST['Simpan'])) {
 
 	$bidang_pelayanan = $_POST['bidang_pelayanan'];
-	$waktu_penyelesaian = $_POST['waktu_penyelesaian'];	
-	$jam_pelayanan = $_POST['jam_pelayanan'];	
+	$waktu_penyelesaian = $_POST['waktu_penyelesaian'];
+	$jam_pelayanan = $_POST['jam_pelayanan'];
 
-	//mulai proses simpan data
+	$sql_check_data = mysqli_query($koneksi, "SELECT * FROM tb_pelayanan WHERE bidang_pelayanan='$bidang_pelayanan'") or die(mysqli_error($koneksi));
 
-	$query = mysqli_query($link, "INSERT INTO tb_pelayanan(bidang_pelayanan, waktu_penyelesaian, jam_pelayanan) VALUES('$bidang_pelayanan','$waktu_penyelesaian','$jam_pelayanan')");
-
-
-	if ($query) {
+	if (mysqli_num_rows($sql_check_data) > 0) {
 		echo "<script>
-      Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
-      }).then((result) => {if (result.value){
-          window.location = 'index.php?page=data-jenis_pelayanan';
-          }
-      })</script>";
+		Swal.fire({title: 'Data Ini Sudah Ada',text: '',icon: 'error',confirmButtonText: 'OK'
+		}).then((result) => {if (result.value){
+			window.location = 'index.php?page=data-jenis_pelayanan';
+			}
+		})</script>";
 	} else {
-		echo "<script>
-      Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
-      }).then((result) => {if (result.value){
-          window.location = 'index.php?page=add-jenis_pelayanan';
-          }
-      })</script>";
+		$query = mysqli_query($link, "INSERT INTO tb_pelayanan(bidang_pelayanan, waktu_penyelesaian, jam_pelayanan) VALUES('$bidang_pelayanan','$waktu_penyelesaian','$jam_pelayanan')");
+		if ($query) {
+			echo "<script>
+					  Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
+					  }).then((result) => {if (result.value){
+						  window.location = 'index.php?page=data-jenis_pelayanan';
+						  }
+					  })</script>";
+		} else {
+			echo "<script>
+					  Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
+					  }).then((result) => {if (result.value){
+						  window.location = 'index.php?page=add-jenis_pelayanan';
+						  }
+					  })</script>";
+		}
 	}
 }
      //selesai proses simpan data
